@@ -8,14 +8,15 @@ Traveller.prototype.getJourneyStartLocations = function() {
   });
 };
 
-TTraveller.prototype.getJourneyEndLocations = function () {
+Traveller.prototype.getJourneyEndLocations = function () {
   return this.journeys.map((journey) => {
     return journey.endLocation;
   });
 };
-
 Traveller.prototype.getJourneysByTransport = function (transport) {
-
+  return this.journeys.filter((journey) => {
+    return journey.transport === transport;
+  });
 };
 
 Traveller.prototype.getJourneysByMinDistance = function (minDistance) {
